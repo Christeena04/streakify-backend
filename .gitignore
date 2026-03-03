@@ -1,0 +1,42 @@
+# Maven target folder
+target/
+
+# Logs
+*.log
+
+# Compiled files
+*.class
+*.jar
+*.war
+
+# Environment files
+.env
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# VS Code
+.vscode/
+
+# Maven wrapper (optional - usually keep it)
+!.mvn/wrapper/maven-wrapper.jar
