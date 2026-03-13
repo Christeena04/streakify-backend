@@ -22,7 +22,7 @@ public class StreakService {
         this.habitRepository = habitRepository;
     }
 
-    // ⭐ Main method (Controller calls this)
+    // Main method (Controller calls this)
     public StreakDTO getStreak(Long habitId) {
 
         // Validate habit once
@@ -72,7 +72,7 @@ public class StreakService {
 
         return streak;
     }
-    // ⭐ Longest streak calculation
+    // Longest streak calculation
     private int calculateLongestStreakFromLogs(List<HabitLog> logs) {
 
         int longest = 0;
