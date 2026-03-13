@@ -97,7 +97,7 @@ public class HabitLogService {
                 .toList();
     }
 
-    // ⭐ MUST BE INSIDE CLASS
+
     private HabitLogResponseDTO convertToDTO(HabitLog log) {
         return new HabitLogResponseDTO(
                 log.getId(),
