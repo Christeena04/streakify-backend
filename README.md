@@ -57,6 +57,7 @@ Database (PostgreSQL)
 
 Tables:
 
+
 ## users
 
 | Column     | Type        |
@@ -65,6 +66,7 @@ Tables:
 | name       | String      |
 | email      | Unique      |
 | created_at | Timestamp   |
+
 
 
 ## habits
@@ -78,6 +80,8 @@ Tables:
 | created_at           | Timestamp   |
 
 
+
+
 ## habit_logs
 
 
@@ -88,6 +92,69 @@ Tables:
 | log_date  | Date        |
 | completed | Boolean     |
 
+
+# Project Structure
+
+```
+streakify-backend
+│
+├── docs
+│   └── screenshots
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.streakify.streakify_backend
+│   │   │       │   StreakifyBackendApplication.java
+│   │   │
+│   │   │       ├── controller
+│   │   │       │   ├── DashboardController.java
+│   │   │       │   ├── HabitController.java
+│   │   │       │   ├── HabitLogController.java
+│   │   │       │   ├── StreakController.java
+│   │   │       │   └── UserController.java
+│   │   │
+│   │   │       ├── dto
+│   │   │       │   ├── HabitLogRequestDTO.java
+│   │   │       │   ├── HabitLogResponseDTO.java
+│   │   │       │   ├── HabitProgressDTO.java
+│   │   │       │   ├── HabitRequestDTO.java
+│   │   │       │   ├── HabitResponseDTO.java
+│   │   │       │   ├── StreakDTO.java
+│   │   │       │   ├── StreakSummaryDTO.java
+│   │   │       │   ├── UserDashboardResponseDTO.java
+│   │   │       │   ├── UserRequestDTO.java
+│   │   │       │   └── UserResponseDTO.java
+│   │   │
+│   │   │       ├── entity
+│   │   │       │   ├── Habit.java
+│   │   │       │   ├── HabitLog.java
+│   │   │       │   └── User.java
+│   │   │
+│   │   │       ├── exception
+│   │   │       │   ├── GlobalExceptionHandler.java
+│   │   │       │   └── ResourceNotFoundException.java
+│   │   │
+│   │   │       ├── repository
+│   │   │       │   ├── HabitLogRepository.java
+│   │   │       │   ├── HabitRepository.java
+│   │   │       │   └── UserRepository.java
+│   │   │
+│   │   │       └── service
+│   │   │           ├── DashboardService.java
+│   │   │           ├── HabitLogService.java
+│   │   │           ├── HabitService.java
+│   │   │           ├── StreakService.java
+│   │   │           └── UserService.java
+│   │
+│   │   └── resources
+│   │       └── application.properties
+│   │
+│   └── test
+│
+├── pom.xml
+└── README.md
+```
 
 
 ## API Endpoints
@@ -208,6 +275,88 @@ GET /users/{userId}/dashboard
   "consistencyScore": 82
 }
 ```
+## 📸 Screenshots
+
+### User APIs
+
+#### Create User
+![Create User](docs/screenshots/Create%20User.png)
+
+#### Fetch User
+![Fetch User](docs/screenshots/FetchUser.png)
+
+#### Delete User
+![Delete User](docs/screenshots/DeleteUser.png)
+
+#### Invalid Email
+![Invalid Email](docs/screenshots/InvalidEmail.png)
+
+#### Duplicate Email
+![Duplicate Email](docs/screenshots/Duplicate_Email.png)
+
+#### User Not Found
+![User Not Found](docs/screenshots/UserNotFound.png)
+
+---
+
+### Habit APIs
+
+#### Create Habit
+![Create Habit](docs/screenshots/CreateHabit.png)
+
+#### Get All Habits
+![Get All Habits](docs/screenshots/GetAllHabits.png)
+
+#### Delete Habit
+![Delete Habit](docs/screenshots/DeleteHabit.png)
+
+#### Habit Not Found
+![Habit Not Found](docs/screenshots/HabitNotFound.png)
+
+---
+
+### Habit Log APIs
+
+#### Create Log
+![Create Log](docs/screenshots/CreateLog.png)
+
+#### Update Log
+![Update Log](docs/screenshots/UpdateLog.png)
+
+#### All Logs
+![All Logs](docs/screenshots/AllLogs.png)
+
+#### Already Logged
+![Already Logged](docs/screenshots/AlreadyLogged.png)
+
+#### Future Date Validation
+![Future Date](docs/screenshots/FutureDate.png)
+
+#### Target Achieved
+![Target Achieved](docs/screenshots/Targetachieved.png)
+
+#### Target Exceed Validation
+![Log Exceed](docs/screenshots/LogExceed.png)
+
+---
+
+### Streak APIs
+
+#### Fetch Streak
+![Fetch Streak](docs/screenshots/FetchStreak.png)
+
+#### Break Streak
+![Break Streak](docs/screenshots/BreakStreak.png)
+
+
+
+---
+
+### Dashboard
+
+#### Productivity Dashboard
+![Dashboard](docs/screenshots/Dashboard.png)
+
 ## Setup Instructions
 
 ### 1. Clone Repository
@@ -233,6 +382,8 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/streakify_db
 spring.datasource.username=postgres
 spring.datasource.password=yourpassword
 ```
+
+
 ### Run Application
 
 Start the backend application using the appropriate command based on the framework used:
@@ -246,6 +397,8 @@ Application will be available at:
 ```
 http://localhost:8080
 ```
+
+
 ##  Postman Testing
 
 The following test cases were implemented:
@@ -264,32 +417,10 @@ The following test cases were implemented:
 -  Future date log  
 -  Non-existing user  
 -  Invalid email
-  
-## Project Structure
 
-```
-streakify-backend
-│
-├── controller
-│   ├── UserController
-│   ├── HabitController
-│
-├── service
-│   ├── UserService
-│   ├── HabitService
-│
-├── repository
-│   ├── UserRepository
-│   ├── HabitRepository
-│
-├── model
-│
-├── exception
-│
-├── config
-│
-└── application.properties
-```
+
+  
+
 
 
 ## Features Implemented
@@ -308,25 +439,25 @@ streakify-backend
 
 The current version of the Streakify backend implements the core functionality required for the MVP. The following improvements can be implemented in future versions:
 
-### 1. Authentication & Security
+ 1. Authentication & Security
 - Implement JWT-based authentication
 - Add login functionality
 - Secure APIs with role-based access control
 
-### 2. Notification System
+ 2. Notification System
 - Send daily reminders for habits
 - Email or push notifications for streak updates
 
-### 3. Mobile App Integration
+ 3. Mobile App Integration
 - Integrate the backend with a mobile frontend application
 - Provide real-time habit tracking
 
-### 4. Advanced Analytics
+ 4. Advanced Analytics
 - Weekly and monthly productivity reports
 - Habit completion trends
 - Personalized improvement suggestions
 
-### 5. Performance Improvements
+ 5. Performance Improvements
 - Add caching for dashboard analytics
 - Optimize streak calculation queries
 
