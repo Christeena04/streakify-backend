@@ -330,14 +330,7 @@ The current version of the Streakify backend implements the core functionality r
 - Add caching for dashboard analytics
 - Optimize streak calculation queries
 
-### 6. Docker Support
-- Containerize the application using Docker
-- Simplify deployment across environments
 
-### 7. Unit Testing
-- Implement JUnit / Integration tests
-- Increase reliability of APIs
-  
 
 
 ##  Author
