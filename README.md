@@ -93,7 +93,68 @@ Tables:
 | completed | Boolean     |
 
 
+# Project Structure
 
+```
+streakify-backend
+│
+├── docs
+│   └── screenshots
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.streakify.streakify_backend
+│   │   │       │   StreakifyBackendApplication.java
+│   │   │
+│   │   │       ├── controller
+│   │   │       │   ├── DashboardController.java
+│   │   │       │   ├── HabitController.java
+│   │   │       │   ├── HabitLogController.java
+│   │   │       │   ├── StreakController.java
+│   │   │       │   └── UserController.java
+│   │   │
+│   │   │       ├── dto
+│   │   │       │   ├── HabitLogRequestDTO.java
+│   │   │       │   ├── HabitLogResponseDTO.java
+│   │   │       │   ├── HabitProgressDTO.java
+│   │   │       │   ├── HabitRequestDTO.java
+│   │   │       │   ├── HabitResponseDTO.java
+│   │   │       │   ├── StreakDTO.java
+│   │   │       │   ├── StreakSummaryDTO.java
+│   │   │       │   ├── UserDashboardResponseDTO.java
+│   │   │       │   ├── UserRequestDTO.java
+│   │   │       │   └── UserResponseDTO.java
+│   │   │
+│   │   │       ├── entity
+│   │   │       │   ├── Habit.java
+│   │   │       │   ├── HabitLog.java
+│   │   │       │   └── User.java
+│   │   │
+│   │   │       ├── exception
+│   │   │       │   ├── GlobalExceptionHandler.java
+│   │   │       │   └── ResourceNotFoundException.java
+│   │   │
+│   │   │       ├── repository
+│   │   │       │   ├── HabitLogRepository.java
+│   │   │       │   ├── HabitRepository.java
+│   │   │       │   └── UserRepository.java
+│   │   │
+│   │   │       └── service
+│   │   │           ├── DashboardService.java
+│   │   │           ├── HabitLogService.java
+│   │   │           ├── HabitService.java
+│   │   │           ├── StreakService.java
+│   │   │           └── UserService.java
+│   │
+│   │   └── resources
+│   │       └── application.properties
+│   │
+│   └── test
+│
+├── pom.xml
+└── README.md
+```
 
 
 ## API Endpoints
@@ -359,68 +420,7 @@ The following test cases were implemented:
 
 
   
-## Project Structure
 
-```
-streakify-backend
-│
-├── docs
-│   └── screenshots
-│
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com.streakify.streakify_backend
-│   │   │       │   StreakifyBackendApplication.java
-│   │   │
-│   │   │       ├── controller
-│   │   │       │   ├── DashboardController.java
-│   │   │       │   ├── HabitController.java
-│   │   │       │   ├── HabitLogController.java
-│   │   │       │   ├── StreakController.java
-│   │   │       │   └── UserController.java
-│   │   │
-│   │   │       ├── dto
-│   │   │       │   ├── HabitLogRequestDTO.java
-│   │   │       │   ├── HabitLogResponseDTO.java
-│   │   │       │   ├── HabitProgressDTO.java
-│   │   │       │   ├── HabitRequestDTO.java
-│   │   │       │   ├── HabitResponseDTO.java
-│   │   │       │   ├── StreakDTO.java
-│   │   │       │   ├── StreakSummaryDTO.java
-│   │   │       │   ├── UserDashboardResponseDTO.java
-│   │   │       │   ├── UserRequestDTO.java
-│   │   │       │   └── UserResponseDTO.java
-│   │   │
-│   │   │       ├── entity
-│   │   │       │   ├── Habit.java
-│   │   │       │   ├── HabitLog.java
-│   │   │       │   └── User.java
-│   │   │
-│   │   │       ├── exception
-│   │   │       │   ├── GlobalExceptionHandler.java
-│   │   │       │   └── ResourceNotFoundException.java
-│   │   │
-│   │   │       ├── repository
-│   │   │       │   ├── HabitLogRepository.java
-│   │   │       │   ├── HabitRepository.java
-│   │   │       │   └── UserRepository.java
-│   │   │
-│   │   │       └── service
-│   │   │           ├── DashboardService.java
-│   │   │           ├── HabitLogService.java
-│   │   │           ├── HabitService.java
-│   │   │           ├── StreakService.java
-│   │   │           └── UserService.java
-│   │
-│   │   └── resources
-│   │       └── application.properties
-│   │
-│   └── test
-│
-├── pom.xml
-└── README.md
-```
 
 
 ## Features Implemented
