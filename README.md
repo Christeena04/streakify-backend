@@ -101,6 +101,12 @@ streakify-backend
 ├── docs
 │   └── screenshots
 │
+├── postman
+│   └── Streakify.postman_collection.json
+│
+├── sql
+│   └── schema.sql
+│
 ├── src
 │   ├── main
 │   │   ├── java
@@ -155,7 +161,6 @@ streakify-backend
 ├── pom.xml
 └── README.md
 ```
-
 
 ## API Endpoints
 
