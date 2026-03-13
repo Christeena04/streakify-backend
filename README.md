@@ -88,7 +88,6 @@ Tables:
 | log_date  | Date        |
 | completed | Boolean     |
 
-Constraint : UNIQUE(habit_id, log_date)  // This prevents duplicate logs for the same habit on the same day.
 
 
 ## API Endpoints
@@ -234,20 +233,18 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/streakify_db
 spring.datasource.username=postgres
 spring.datasource.password=yourpassword
 ```
-### 4. Run Application
+### Run Application
 
-Run the backend application using the appropriate command based on the framework used:
+Start the backend application using the appropriate command based on the framework used:
+
+#### Spring Boot
 
 ```bash
 mvn spring-boot:run
 ```
-or
+Application will be available at:
 ```
-npm start
-```
-or
-```
-uvicorn main:app --reload
+http://localhost:8080
 ```
 ##  Postman Testing
 
@@ -266,7 +263,9 @@ The following test cases were implemented:
 -  Duplicate log entry  
 -  Future date log  
 -  Non-existing user  
--  Invalid email  
+-  Invalid email
+  
+## Project Structure
 
 ```
 streakify-backend
@@ -339,16 +338,7 @@ The current version of the Streakify backend implements the core functionality r
 - Implement JUnit / Integration tests
 - Increase reliability of APIs
   
-## Deployment / Hosting
 
-Currently, the application runs locally for development and testing.
-
-### Local Hosting
-
-The backend server runs locally using:
-```
-localhost:8080
-```
 
 ##  Author
 
